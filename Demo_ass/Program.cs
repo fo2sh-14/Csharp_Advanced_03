@@ -69,7 +69,7 @@
             Console.WriteLine(leaderboard.ContainsKey(500));
 
             // point 5
-            if (leaderboard.TryGetValue(999, out string player999))
+            if (leaderboard.TryGetValue(999, out string? player999))
             {
                 Console.WriteLine($"Player with score 999: {player999}");
             }
@@ -85,6 +85,55 @@
             {
                 Console.WriteLine(item);
             }
+            #endregion
+
+            Console.WriteLine("----------------------------------");
+
+            #region Exercise 3: Phone Book
+            // point 1 
+            Dictionary<string, string> phoneBook = new Dictionary<string, string>
+            {
+                { "Ahmed", "01112223344" },
+                { "Sara", "01223334455" },
+                { "Ali", "01005556677" },
+                { "Mona", "01556667788" }
+            };
+
+            // point 2 
+            phoneBook["Khaled"] = "01011223344";
+
+            // point 3
+            try
+            {
+                phoneBook.Add("Ahmed", "01999999999");
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            Console.WriteLine();
+
+            // point 4 
+            Console.WriteLine(phoneBook.TryAdd("Youssef", "01032210487"));
+
+            // point 5 
+            Console.WriteLine( phoneBook.ContainsKey("Youssef"));
+
+            // point 6
+            Console.WriteLine(phoneBook.GetValueOrDefault("Saraaa", "Not Found"));
+
+            // point 7 
+            foreach (var item in phoneBook.Keys)
+            {
+                Console.Write($"{item} , ");
+            }
+            Console.WriteLine();
+            foreach (var item in phoneBook.Values)
+            {
+                Console.Write($"{item} , ");
+            }
+
+
             #endregion
 
         }
