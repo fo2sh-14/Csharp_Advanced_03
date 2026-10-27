@@ -170,6 +170,39 @@
 
             #endregion
 
+            Console.WriteLine("----------------------------------");
+
+            #region Exercise 5: Print Queue Simulator
+
+            Queue<string> printer = new Queue<string>();
+            printer.Enqueue("Report.pdf");
+            printer.Enqueue("nvoice.pdf");
+            printer.Enqueue("Letter.docx");
+            printer.Enqueue("Resume.pdf");
+            printer.Enqueue("Photo.jpg");
+
+            // point 1 
+            foreach (var item in printer)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine(printer.Count);
+            Console.WriteLine();
+
+            // point 2 
+            Console.WriteLine(printer.Peek());
+
+            // point 3
+            Console.WriteLine($"Printing: {printer.Dequeue()}");
+            Console.WriteLine($"Printing: {printer.Dequeue()}");
+            Console.WriteLine($"Printing: {printer.Dequeue()}");
+            Console.WriteLine($"Printing: {printer.Dequeue()}");
+            Console.WriteLine($"Printing: {printer.Dequeue()}");
+
+            // point 4 
+            Console.WriteLine(printer.TryDequeue(out string? s)); // ==> return false --> because Queue is empty
+
+            #endregion
         }
     }
 }
