@@ -26,10 +26,9 @@
             grades.ForEach(x =>
             {
                 if (x < 75)
-                    Console.Write($"{x}, ");
-                Console.WriteLine();
+                    Console.Write($"{x}, ");   
             });
-
+            Console.WriteLine();
             // point 6 
             grades.RemoveAll(x => x < 75);
 
@@ -133,6 +132,41 @@
                 Console.Write($"{item} , ");
             }
 
+            Console.WriteLine();
+            #endregion
+
+            Console.WriteLine("----------------------------------");
+
+            #region Exercise 4: Unique Email Validator
+            // point 1 
+            HashSet<string> email = new HashSet<string>();
+
+            // point 2 
+            email.Add("ahmed@test.com");
+            email.Add("AHMED@test.com");
+            email.Add("sara@test.com");
+            email.Add("Sara@Test.Com");
+
+            // point 3 
+            Console.WriteLine(email.Count); // because i sorted unique emails 
+
+            // point 4 
+            HashSet<int> A = [1, 2, 3, 4, 5];
+            HashSet<int> B = [4, 5, 6, 7, 8];
+
+            // point 5 
+            HashSet<int> result = new HashSet<int>(A);
+            result.UnionWith(B);
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
+            result.IntersectWith(B);
+            result.ExceptWith(B);
+
+            // point 6 
+            HashSet<int> C = [1,2];
+            Console.WriteLine(C.IsSubsetOf(A));
 
             #endregion
 
