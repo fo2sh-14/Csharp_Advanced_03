@@ -203,6 +203,40 @@
             Console.WriteLine(printer.TryDequeue(out string? s)); // ==> return false --> because Queue is empty
 
             #endregion
+
+            Console.WriteLine("----------------------------------");
+
+            #region Exercise 6: Browser History (Undo)
+            // point 1 
+            Stack<string> browser = new Stack<string>();
+            browser.Push("google.com");
+            browser.Push("github.com");
+            browser.Push("stackoverflow.com");
+            browser.Push("youtube.com");
+            browser.Push("claude.ai");
+            Console.WriteLine();
+
+            // point 2 
+            Console.WriteLine(browser.Peek());
+            Console.WriteLine();
+
+            // point 3 
+            Console.WriteLine(browser.Pop());
+            Console.WriteLine(browser.Pop());
+            Console.WriteLine(browser.Pop());
+            Console.WriteLine();
+
+            // point 4 
+            foreach (var item in browser)
+            {
+                Console.WriteLine(item);
+            }
+
+            // point 5 
+            browser.Pop();
+            browser.Pop();
+            Console.WriteLine(browser.TryPop(out string? r)); // ==> return false --> because Stack is empty
+            #endregion
         }
     }
 }
